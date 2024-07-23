@@ -7,6 +7,7 @@ Nele foram feitas 4 páginas web:
   - Adicionar o ativo que será monitorado
   - Listar Informações dos ativos que estão sendo monitorados
   - Listar as cotações monitoradas de um ativo específico
+
 Para adicionar o ativo que deseja monitorar basta preencher o formulário em 'Adicionar Ativo' preechendo todos os requisitos que serão utilizados durante o monitoramento, como simbolo, descrição, limite inferior, limite superior, periodicidade em minutos.
 Depois de preencher é possível acompanhar quais ativos foram adicionados no monitoramento em 'Listar Informações Ativos' ou então visualizar as cotações que foram registradas de um ativo em específico em 'Listar Cotações'
 O monitoramento da lista de ativos é feita e armazenada no banco de dados a cada 5 minutos(para não sobrecarregar a API de consulta de ativo, uma vez que podemos fazer apenas 8 requisições por minuto na versão gratuita do twelve data), nesse primeiro momento.
