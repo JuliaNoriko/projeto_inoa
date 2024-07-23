@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monitoramento de Ativos</title>
+</head>
+<body>
+    <h1>Cotações de Ativos</h1>
+
+    <ul>
+        <li>Teste</li>
+        {{cotacoes}}
+        {% for cotacao in cotacoes %}
+            <li>{{ cotacao.ativo.simbolo }}: {{ cotacao.preco }} em {{cotacao.data_hora}}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
