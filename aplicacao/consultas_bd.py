@@ -2,8 +2,10 @@
 #python manage.py shell
 
 
-#from aplicacao.utils import Buscar_Cotacao_Ativo
-#from aplicacao.tasks import Verificar_Cotacoes
+# from aplicacao.utils import Buscar_Cotacao_Ativo
+# from aplicacao.tasks import Verificar_Cotacoes
+
+#$ python manage.py shell
 
 #Digitar os comandos abaixo para as consultas do bd
 from aplicacao.models import Ativo, ParametroAtivo, Cotacao

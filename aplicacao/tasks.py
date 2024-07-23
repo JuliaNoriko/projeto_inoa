@@ -8,16 +8,15 @@ def Verificar_Cotacoes():
     parametros = ParametroAtivo.objects.all()
 
     for parametro in parametros:
-        preco = Buscar_Cotacao_Ativo('IBM')
+        preco = Buscar_Cotacao_Ativo(parametro.ativo, parametro.periodicidade)
 
         print(preco)
 
         if preco:
             cotacao = Cotacao(
-                simbolo = preco['symbol'],
-                close = preco['close'],
-                low = preco['low'],
-                high = preco['high']
+                ativo = parametro.ativo,
+                preco = preco['close'],
+                data_hora = preco['datetime']
             )     
             cotacao.save()   
             print(f'Cotação salva: {cotacao}') 

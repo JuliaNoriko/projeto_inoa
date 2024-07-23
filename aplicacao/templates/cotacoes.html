@@ -7,12 +7,12 @@
     <h1>Cotações de Ativos</h1>
 
     <ul>
-        <li>Teste</li>
-        {{cotacoes}}
         {% for cotacao in cotacoes %}
-            <li>{{ cotacao.ativo.simbolo }}: {{ cotacao.preco }} em {{cotacao.data_hora}}</li>
+            <li>{{ cotacao.ativo.simbolo }}: {{ cotacao.preco }} em {{cotacao.data_hora}}</li> 
         {% endfor %}
     </ul>
+
+    <h1></h1>
 
 </body>
 </html>
