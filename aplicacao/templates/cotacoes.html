@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Monitoramento de Ativos</title>
+    <title>Pesquisar Cotações de Ativos</title>
 </head>
 <body>
-    <h1>Cotações de Ativos</h1>
 
+    <!-- Pesquisando o ativo para verificar as últimas cotações -->
+    <h3>Pesquisando Cotações de ativo</h3>
+    <form method="POST" action="{% url 'cotacoes' %}">
+        {% csrf_token %}
+        <label for="ativo">Ativo:</label>
+        <select id="ativo" name="simb_ativo">
+            {% for ativo in ativos %}
+                <option value="{{ativo.simbolo}}">{{ ativo.simbolo}} </option>
+            {% endfor %}
+        </select>
+        <button type="submit">Pesquisar</button>
+    </form>
+    
+
+
+    <!-- Resultado das cotações da pesquisa do ativo-->
+    <h3>Resultado Cotação</h3>
+    {% if cotacao %}
     <ul>
-        {% for cotacao in cotacoes %}
-            <li>{{ cotacao.ativo.simbolo }}: {{ cotacao.preco }} em {{cotacao.data_hora}}</li> 
-        {% endfor %}
+        <h4>Ativo: {{ cotacao.ativo.simbolo }} </h4>
+        <li>
+            Cotação: {{ cotacao.preco }} <br>
+            Em {{cotacao.data_hora}}
+        </li> 
     </ul>
-
-    <h1></h1>
-
+    {% endif %}
 </body>
 </html>

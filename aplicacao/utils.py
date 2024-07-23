@@ -3,7 +3,7 @@ import logging
 from .models import Cotacao
 
 logger = logging.getLogger(__name__)
-logger.debug("Teste de log - Iniciando a função consultar_preco_ativo")
+logger.debug("Teste de log - Iniciando a função Buscar_Cotacao_Ativo")
 
 
 #Utilizando a API gratuita e pública da Twelve Data 
@@ -20,7 +20,7 @@ def Buscar_Cotacao_Ativo(simbolo, intervalo):
     response = requests.get(url)
     data = response.json()
     
-    print(data)
+    #print(data)
 
     if 'values' in data:
         # Pegar o primeiro item da lista de valores
@@ -30,21 +30,15 @@ def Buscar_Cotacao_Ativo(simbolo, intervalo):
        
         symbol = data['meta']['symbol']
         close_price = ultima_cotacao['close']
-        low_price = ultima_cotacao['low']
-        high_price = ultima_cotacao['high']
         datetime = ultima_cotacao['datetime']
 
         logger.debug(f"Simbol: {symbol}")
         logger.debug(f"close: {close_price}")
-        logger.debug(f"high: {high_price}")
-        logger.debug(f"low: {low_price}")
         logger.debug(f"datetime: {datetime}")
         
         resultado = {
                         'symbol': symbol,
                         'close': close_price,
-                        'low': low_price,
-                        'high': high_price,
                         'datetime': datetime
                     }
 

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monitoramento de Ativos</title>
+</head>
+<body>
+    <h1>Parâmetros de Ativos</h1>
+
+    <ul>
+        {% for ativo in ativos %}
+            <li>
+                Ativo: {{ ativo.simbolo }} <br>
+                Limite Superior:{{ ativo.limite_superior }} <br> 
+                Limite Inferior: {{ ativo.limite_inferior}} <br> 
+                Periodicidade: {{ ativo.periodicidade }} minuto(s)
+            </li><br>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>

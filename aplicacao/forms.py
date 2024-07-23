@@ -1,12 +1,8 @@
 from django import forms
-from .models import Ativo, ParametroAtivo
+from .models import Ativo
 
 class AtivoForm(forms.ModelForm):
     class Meta:
         model = Ativo
-        fields = ['simbolo', 'descricao']
+        fields = ['simbolo', 'descricao', 'limite_inferior', 'limite_superior', 'periodicidade']
 
-class ParametroAtivoForm(forms.ModelForm):
-    class Meta:
-        model = ParametroAtivo
-        fields = ['ativo', 'limite_inferior', 'limite_superior', 'periodicidade']
