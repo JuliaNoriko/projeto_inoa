@@ -149,3 +149,12 @@ LOGGING = {
         'level': 'DEBUG',
     },
 }
+
+#Para envio de email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.exemplo.com'  # Endereço do servidor SMTP
+EMAIL_PORT = 587  # Porta do servidor SMTP
+EMAIL_USE_TLS = True  # Use TLS para segurança
+EMAIL_HOST_USER = 'your-email@example.com'  # Seu endereço de email
+EMAIL_HOST_PASSWORD = 'your-email-password'  # Sua senha de email
+DEFAULT_FROM_EMAIL = 'monitoramento@exemplo.com'  # Email padrão de remetente
