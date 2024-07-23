@@ -1,5 +1,6 @@
 from .models import ParametroAtivo, Cotacao
 from .utils import Buscar_Cotacao_Ativo
+from decimal import Decimal
 
 def Verificar_Cotacoes():
 
@@ -21,12 +22,9 @@ def Verificar_Cotacoes():
             cotacao.save()   
             print(f'Cotação salva: {cotacao}') 
 
-        # if preco:
-        #     cotacao = Cotacao(ativo=parametro.ativo, preco=preco)
-        #     cotacao.save()
+        #Verificando se o último preço do Ativo é maior que o limite superior ou menor que o limite inferior para avisar o investidor
+            if Decimal(preco['close']) < parametro.limite_inferior:
+                print(f'Comprar ação!')
 
-        #     if preco <parametro.limite_inferior:
-        #         print(f'Comprar ação!')
-
-        #     elif preco > parametro.limite_superior:
-        #         print(f'Vender ação!')
+            elif Decimal(preco['close']) > parametro.limite_superior:
+                print(f'Vender ação!')

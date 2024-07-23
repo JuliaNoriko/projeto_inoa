@@ -53,20 +53,7 @@ def Buscar_Cotacao_Ativo(simbolo, intervalo):
     else:
        return None
 
-    # if response.status_code == 200:
-    #     data = response.json()
-    #     if 'values' in data:
-    #         for item in data:
-    #             cotacao, created = Cotacao.ativo.objects.get_or_create(nome=item['symbol'])
-    #             Cotacao.preco = item['price']
-    #             Cotacao.save()
-    #             logger.debug(f"Preço do ativo {item['symbol']} atualizado para {item['price']}")
-
-    # else:
-    #     print(f"Erro: {response.status_code}")
-    #     logger.error(f"Erro ao consultar a API: {response.status_code}")
-
-
+#Funcao para chamar a requisição API
 def iniciar_tarefas():
 
     from django_q.models import Schedule 
