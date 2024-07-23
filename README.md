@@ -35,14 +35,17 @@ OBS: O envio de e-mail ainda não está totalmente funcional, uma vez que a cone
     pip install -r requirements.txt
     ```
 
-## Uso
+### Uso
 
-Execute o seguinte comando para iniciar o servidor Django:
+1. Execute o seguinte comando para iniciar o servidor Django:
 ```sh
 python manage.py runserver
 
-Execute em outro prompt para rodar o worker que processará a fila de tarefas, que permite o monitoramento dos ativos
+
+2. Execute em outro prompt para rodar o worker que processará a fila de tarefas, que permite o monitoramento dos ativos
 ```sh
 python manage.py qcluster
 
-No seu navegador acesse o servidor: http://127.0.0.1:8000/
+3. No seu navegador acesse o servidor:
+```sh
+http://127.0.0.1:8000/
