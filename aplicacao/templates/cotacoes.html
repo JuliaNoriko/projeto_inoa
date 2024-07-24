@@ -5,6 +5,12 @@
 </head>
 <body>
 
+    <script>
+        function voltar() {
+            window.location.href = '/'; // URL de destino
+        }
+    </script>
+    
     <!-- Pesquisando o ativo para verificar as últimas cotações -->
     <h3>Pesquisando Cotações de ativo</h3>
     <form method="POST" action="{% url 'cotacoes' %}">
@@ -31,5 +37,7 @@
         </li> 
     </ul>
     {% endif %}
+
+    <button onclick="voltar()">Voltar</button>
 </body>
 </html>

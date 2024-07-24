@@ -4,6 +4,13 @@
     <title>Monitoramento de Ativos</title>
 </head>
 <body>
+
+    <script>
+        function voltar() {
+            window.location.href = '/'; // URL de destino
+        }
+    </script>
+
     <h1>Parâmetros de Ativos</h1>
 
     <ul>
@@ -17,5 +24,6 @@
         {% endfor %}
     </ul>
     
+    <button onclick="voltar()">Voltar</button>
 </body>
 </html>
